@@ -302,7 +302,8 @@ int Statement::getColumnIndex(const char* apName) const
 const char* Statement::getColumnDeclaredType(const int aIndex) const
 {
     checkIndex(aIndex);
-    const char * result = sqlite3_column_decltype(getPreparedStatement(), aIndex);
+    //const char * result = sqlite3_column_decltype(mStmtPtr, aIndex);
+    const char * result = nullptr;
     if (!result)
     {
         throw SQLite::Exception("Could not determine declared column type.");
